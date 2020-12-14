@@ -1,3 +1,4 @@
+---
  - name: Sh ver  
    hosts: all
    gather_facts: no
