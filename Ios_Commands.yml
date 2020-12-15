@@ -1,7 +1,7 @@
 ---
  - name: Sh ver  
-   hosts: all
-   gather_facts: no
+    hosts: all
+    gather_facts: no
     task:
      - name: chạy lệnh show version
        ios_command:
