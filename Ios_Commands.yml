@@ -1,30 +1,30 @@
   
 ---
-    - name: Sh ver  
-      hosts: all
-      gather_facts: no
-      task:
-        - name: chạy lệnh show version
-          ios_command:
-            command: show version
+- name: Sh ver  
+  hosts: all
+  gather_facts: no
+  task:
+    - name: chạy lệnh show version
+      ios_command:
+        command: show version
         
-        - name: chạy lệnh show version bao gồm IOS
-          ios_command:
-            commnand: show version
-            wait_for: result[0] contains IOS
+    - name: chạy lệnh show version bao gồm IOS
+      ios_command:
+        commnand: show version
+        wait_for: result[0] contains IOS
         
-        - name: chạy nhiều lệnh
-          ios_command:
-            commands:
-                - show version
-                - show interfaces
+    - name: chạy nhiều lệnh
+      ios_command:
+        commands:
+            - show version
+            - show interfaces
         
-        - name: chạy nhiều lệnh yêu cầu trả lời prompt
-          ios_command:
-            commands:
-            - command: 'clear counters GigabitEthernet0/1'
-              prompt: 'Clear "show interface" counters on this interface \[confirm]\'
-              nswer: 'y'
-            - command: 'clear counters GigabitEthernet0/2'
-              prompt: '[confirm]'
-              answer: '\r'
+    - name: chạy nhiều lệnh yêu cầu trả lời prompt
+      ios_command:
+        commands:
+        - command: 'clear counters GigabitEthernet0/1'
+          prompt: 'Clear "show interface" counters on this interface \[confirm]\'
+          answer: 'y'
+        - command: 'clear counters GigabitEthernet0/2'
+          prompt: '[confirm]'
+          answer: '\r'
