@@ -1,6 +1,6 @@
   
 ---
-- name: Sh ver  
+- name: Sh ver
   hosts: all
   gather_facts: no
   task:
