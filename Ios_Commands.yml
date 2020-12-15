@@ -2,7 +2,7 @@
   - name: Sh ver  
     hosts: all
     gather_facts: no
-     task:
+    task:
       - name: chạy lệnh show version
         ios_command:
             command: show version
